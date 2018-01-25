@@ -23,6 +23,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'spree_core', '>= 3.1.0', '< 4.0'
   s.add_dependency 'spree_extension'
+  s.add_dependency 'acts-as-taggable-on', '~> 5.0'
+
 
   s.add_development_dependency 'capybara'
   s.add_development_dependency 'capybara-screenshot'
@@ -35,8 +37,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'selenium-webdriver'
   s.add_development_dependency 'poltergeist'
   s.add_development_dependency 'simplecov'
-  s.add_development_dependency 'pg'
-  s.add_development_dependency 'mysql2'
   s.add_development_dependency 'sqlite3'
-  s.add_development_dependency 'appraisal'
+  s.add_development_dependency 'launchy'
 end
