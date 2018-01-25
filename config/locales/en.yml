@@ -2,4 +2,64 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      spree/blog_entry:
+        one: Blog Entry
+        other: Blog Entries
+    attributes:
+      spree/blog_entry:
+        title: Title
+        body: Body
+        summary: Summary
+        permalink: Permalink
+        published_at: Published at
+        visible: Visible
+        author_id: Author
+        tag_list: Tags
+        category_list: Categories
+      spree/user:
+        nickname: Nickname
+        website_url: Website URL
+        google_plus_url: Google Plus URL
+        bio_info: Biographical info
+  spree:
+    title: Title
+    body: Body
+    summary: Summary
+    permalink: Permalink
+    published_at: Published at
+    visible: Visible
+    author_id: Author
+    tag_list: Tags
+    category_list: Categories
+    nickname: Nickname
+    website_url: Website URL
+    google_plus_url: Google Plus URL
+    bio_info: Biographical info
+    blog: "Blog"
+    blog_entries: "Blog Entries"
+    new_blog_entry: "New Blog Entry"
+    no_blog_entries: "No blog entries found."
+    blog_entry_featured_image: Featured image
+    posted_on: Posted on
+    posted_in: Posted in
+    tagged: Tagged
+    by: by
+    blog_read_more: Read more
+    blog_archive: Archive
+    blog_tag: Tag
+    blog_category: Category
+    blog_author: Author
+    admin:
+      tab:
+        blog_entries: Blog entries
+    blog:
+      ago: ago
+      categories: Categories
+      tags: Tag cloud
+      recent_entries: Recent entries
+      archive: Archive
+  time:
+    formats:
+      blog_date: "%e %b %Y"
