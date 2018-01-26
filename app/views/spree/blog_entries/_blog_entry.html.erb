@@ -1,0 +1,8 @@
+<h2><%= link_to blog_entry.title, blog_entry_permalink(blog_entry) %></h2>
+
+<div class="blog_entry_summary">
+  <%== blog_entry.entry_summary %>
+  <span class="blog_read_more"><%= link_to Spree.t(:blog_read_more), blog_entry_permalink(blog_entry) %></span>
+</div>
+
+<%= render :partial => 'spree/blog_entries/blog_entry_details', :locals => {:blog_entry => blog_entry} %>

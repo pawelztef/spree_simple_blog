@@ -1,0 +1,6 @@
+<% content_for :sidebar do %>
+  <%= render :partial => 'spree/blog_entries/blog_sidebar' %>
+<% end %>
+
+<h1><%= Spree.t(:blog_category) %>: <%= @category_name %></h1>
+<%= render :partial => 'spree/blog_entries/blog_entries' %>
