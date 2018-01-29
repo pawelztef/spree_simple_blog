@@ -1,6 +1,10 @@
 require 'acts-as-taggable-on'
 
 class Spree::BlogEntry < ApplicationRecord
+  extend Mobility
+  translates :title, type: :string, fallbacks: { en: :es, es: :en },  fallthrough_accessors: true
+  translates :body, type: :string, fallbacks: { en: :es, es: :en },  fallthrough_accessors: true
+  translates :summary, type: :string, fallbacks: { en: :es, es: :en },  fallthrough_accessors: true
   acts_as_taggable_on :tags, :categories
   before_save :create_permalink
   before_save :set_published_at

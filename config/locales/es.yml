@@ -1,0 +1,62 @@
+es:
+  activerecord:
+    models:
+      spree/blog_entry:
+        one: Blog Entry
+        other: Blog Entries
+    attributes:
+      spree/blog_entry:
+        title: Título
+        body: Cuerpo
+        summary: Sumario
+        permalink: Permalink
+        published_at: Publicado
+        visible: Visible
+        author_id: Autor
+        tag_list: Tags
+        category_list: Categorías
+      spree/user:
+        nickname: Nickname
+        website_url: Website URL
+        google_plus_url: Google Plus URL
+        bio_info: Bio
+  spree:
+    title: Título
+    body: Cuerpo
+    summary: Sumario
+    permalink: Permalink
+    published_at: Publicado
+    visible: Visible
+    author_id: Autor
+    tag_list: Tags
+    category_list: Categorías
+    nickname: Nickname
+    website_url: Website URL
+    google_plus_url: Google Plus URL
+    bio_info: Bio
+    blog: "Blog"
+    blog_entries: "Entradas de Blog"
+    new_blog_entry: "Nuevo post"
+    no_blog_entries: "No existen post"
+    blog_entry_featured_image: Imagen Principal
+    posted_on: Publicado el
+    posted_in: Publicado en
+    tagged: Tagged
+    by: por
+    blog_read_more: Leer más
+    blog_archive: Archivo
+    blog_tag: Tag
+    blog_category: Categoría
+    blog_author: Autor
+    admin:
+      tab:
+        blog_entries: Blog
+    blog:
+      ago: atras
+      categories: Categorías
+      tags: Nube de tags
+      recent_entries: Post recientes
+      archive: Archivo
+  time:
+    formats:
+      blog_date: "%e %b %Y"

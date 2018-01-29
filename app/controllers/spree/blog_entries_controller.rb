@@ -28,7 +28,6 @@ class Spree::BlogEntriesController < Spree::StoreController
   end
 
   def archive
-    byebug
     @blog_entries = Spree::BlogEntry.visible.by_date(params).page(@pagination_page).per(@pagination_per_page)
   end
 
