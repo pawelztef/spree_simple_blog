@@ -1,8 +1,8 @@
 module Spree
   module BlogEntriesHelper
     def post_link_list
-     link = Struct.new(:name,:url)
-     BlogEntry.recent.collect { |post| link.new( post.title, blog_entry_permalink(post)) }
+      link = Struct.new(:name,:url)
+      BlogEntry.recent.collect { |post| link.new( post.title, blog_entry_permalink(post)) }
     end
 
     def blog_entry_permalink(e)
@@ -17,8 +17,8 @@ module Spree
 
     def blog_entry_url_permalink(e)
       unless e.published_at.nil?
-         blog_entry_permalink_url :year => e.published_at.strftime("%Y"), :month => e.published_at.strftime("%m"), :day => e.published_at.strftime("%d"), :slug => e.permalink
-       else
+        blog_entry_permalink_url :year => e.published_at.strftime("%Y"), :month => e.published_at.strftime("%m"), :day => e.published_at.strftime("%d"), :slug => e.permalink
+      else
         blog_entry_permalink_url :year => "na", :month => "na", :day => "na", :slug => e.permalink
       end
     end
@@ -46,6 +46,14 @@ module Spree
         index = ((tag.count / max_count) * (classes.size - 1))
         yield tag, classes[index.nan? ? 0 : index.round]
       end
+    end
+
+    def set_locales_array
+      begin
+        loc = SpreeI18n::Config.available_locales  
+      rescue  
+        loc = ['en']
+      end 
     end
   end
 end
