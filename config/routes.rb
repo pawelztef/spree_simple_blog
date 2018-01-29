@@ -1,6 +1,10 @@
 Spree::Core::Engine.routes.draw do
   namespace :admin do
-    resources :blog_entries
+    resources :blog_entries do
+      collection do
+        post 'mobility' 
+      end
+    end
   end
 
   scope Spree::Config['blog_alias'], as: 'blog' do
