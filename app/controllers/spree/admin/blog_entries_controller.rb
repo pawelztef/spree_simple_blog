@@ -11,7 +11,6 @@ class Spree::Admin::BlogEntriesController < Spree::Admin::ResourceController
   end
 
   def update
-
     @blog_entry = Spree::BlogEntry.find(params[:id])
     if @blog_entry.update(entry_params)
       flash[:success] = flash_message_for(@blog_entry, :successfully_updated)
@@ -23,16 +22,16 @@ class Spree::Admin::BlogEntriesController < Spree::Admin::ResourceController
 
   def mobility
     session[:mobility_locale] = params[:mobility_locale]
-
     redirect_to admin_blog_entries_url 
   end
 
   def create
-    @entry = Spree::BlogEntry.new(entry_params)
-    if @entry.save
+    @blog_entry = Spree::BlogEntry.new(entry_params)
+    if @blog_entry.save
       flash[:success] = flash_message_for(@blog_entry, :successfully_created)
       redirect_to admin_blog_entries_url
     else
+      # flash[:error] = flash_message_for(@blog_entry, :not_created)
       render :new
     end
   end

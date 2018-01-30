@@ -4,8 +4,9 @@
   <div class="row">
     <div class="col-md-6">
       <%= form.field_container :author_id do %>
-        <%= form.label :author_id, Spree.t(:author_id) %><br />
+        <%= form.label :author_id, Spree.t(:author_id) %><span class='required'>*</span><br/>
         <%= form.select :author_id, Spree.user_class.joins(:spree_roles).where("#{Spree::Role.table_name}.name" => "blogger").collect {|u| [u.email, u.id]}, {:include_blank => true}, :class => 'select2' %>
+        <%= form.error_message_on :author_id %>
       <% end %>
     </div>
     <div class="col-md-1">
@@ -43,7 +44,7 @@
 
     <div class="col-md-6">
       <%= form.field_container :permalink do %>
-        <%= form.label :permalink, Spree.t(:permalink) %> <span class="required">*</span><br />
+        <%= form.label :permalink, Spree.t(:permalink) %><br />
         <%= form.text_field :permalink, :class => 'form-control' %>
         <%= form.error_message_on :permalink %>
       <% end %>
@@ -74,7 +75,8 @@ $("#blog_entry_category_list").select2({tags: <%= Spree::BlogEntry.tag_counts_on
 
   <div class="row">
     <div class="col-md-6">
-      <%= form.label :blog_entry_image, Spree.t(:blog_entry_featured_image) %> <span class="required">*</span><br />
+      <%= form.label :blog_entry_image, Spree.t(:blog_entry_featured_image) %><br />
+      <hr class='fl-up'>
       <div class="row">
         <% @blog_entry.build_blog_entry_image unless @blog_entry.blog_entry_image %>
         <%= form.fields_for :blog_entry_image do |blog_entry_image_field| %>
@@ -98,15 +100,15 @@ $("#blog_entry_category_list").select2({tags: <%= Spree::BlogEntry.tag_counts_on
   </div>
   <div class="row">
     <div class="col-md-12">
-      <%= form.field_container :body do %>
-        <%= form.label :body %> <span class="required">*</span><br />
-        <%= form.cktext_area :body, {:cols => 60, :rows => 4, :class => 'fullwidth', :id => 'blog_entry_body'} %>
-        <%= form.error_message_on :body %>
-      <% end %>
       <%= form.field_container :summary do %>
         <%= form.label :summary %><br />
-        <%= form.cktext_area :summary, {:cols => 60, :rows => 4, :class => 'fullwidth', :id => 'blog_entry_summary'} %>
+        <%= form.text_area :summary, {:cols => 60, :rows => 6, :class => 'form-control sum-ctrl', :id => 'blog_entry_summary'} %>
         <%= form.error_message_on :summary %>
+      <% end %>
+      <%= form.field_container :body do %>
+        <%= form.label :body %> <span class="required">*</span><br />
+        <%= form.cktext_area :body, {:cols => 60, :rows => 8, :class => 'fullwidth', :id => 'blog_entry_body'} %>
+        <%= form.error_message_on :body %>
       <% end %>
     </div>
   </div>
