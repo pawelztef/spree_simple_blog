@@ -1,6 +1,4 @@
-
 <div class="row">
-
   <div class="row">
     <div class="col-md-6">
       <%= form.field_container :author_id do %>
@@ -106,7 +104,7 @@ $("#blog_entry_category_list").select2({tags: <%= Spree::BlogEntry.tag_counts_on
         <%= form.error_message_on :summary %>
       <% end %>
       <%= form.field_container :body do %>
-        <%= form.label :body %> <span class="required">*</span><br />
+        <%= form.label :body %> <span class="required">*</span><br/>
         <%= form.cktext_area :body, {:cols => 60, :rows => 8, :class => 'fullwidth', :id => 'blog_entry_body'} %>
         <%= form.error_message_on :body %>
       <% end %>

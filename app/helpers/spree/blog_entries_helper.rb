@@ -61,7 +61,6 @@ module Spree
       else
        content_tag(:i, '', :class => 'glyphicon glyphicon-unchecked')
       end
-    
     end
   end
 end
