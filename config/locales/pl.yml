@@ -1,0 +1,63 @@
+pl:
+  activerecord:
+    models:
+      spree/blog_entry:
+        one: 'Wpis' 
+        other: 'Wpisy' 
+    attributes:
+      spree/blog_entry:
+        title: 'Tytuł'
+        body: 'Tekst'
+        summary: 'Podsumowanie'
+        permalink: Permalink
+        published_at: 'Opublikowano'
+        visible: 'Widoczny'
+        author_id: 'Autor'
+        tag_list: 'Tagi'
+        category_list: 'Kategorie'
+      spree/user:
+        nickname: 'Nick'
+        website_url: 'URL strony WWW'
+        google_plus_url: Google Plus URL
+        bio_info: 'Info biograficzne'
+  spree:
+    title: 'Tytuł'
+    body: 'Tekst'
+    summary: 'Podsumowanie'
+    permalink: Permalink
+    published_at: 'Opublikowano'
+    visible: 'Widoczny'
+    author_id: 'Autor'
+    tag_list: 'Tagi'
+    category_list: 'Kategorie'
+    nickname: 'Nick'
+    website_url: 'URL strony WWW'
+    google_plus_url: Google Plus URL
+    bio_info: 'Info biograficzne'
+    blog: "Blog"
+    blog_entries: "Wpisy"
+    new_blog_entry: "Nowy wpis"
+    no_blog_entries: "Brak wpisów"
+    blog_entry_featured_image: "Zdjęcie wyróżniające" 
+    posted_on: "Opublikowano"
+    posted_in: "Kategorie" 
+    tagged: "Tagi"
+    by: "przez"
+    blog_read_more: "Czytaj więcej"
+    blog_archive: "Archiwum"
+    blog_tag: Tag
+    blog_category: "Kategoria"
+    blog_author: "Autor"
+    actions: "Akcje"
+    admin:
+      tab:
+        blog_entries: "Wpisy"
+    blog:
+      ago: "temu" 
+      categories: "Kategorie"
+      tags: "Chmura tagów"
+      recent_entries: "Ostatnie wpisy"
+      archive: "Archiwum"
+  time:
+    formats:
+      blog_date: "%e %b %Y"

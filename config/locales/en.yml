@@ -43,8 +43,8 @@ en:
     no_blog_entries: "No blog entries found."
     blog_entry_featured_image: Featured image
     posted_on: Posted on
-    posted_in: Posted in
-    tagged: Tagged
+    posted_in: "Categories" 
+    tagged: "Tags"
     by: by
     blog_read_more: Read more
     blog_archive: Archive
