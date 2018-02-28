@@ -12,6 +12,14 @@ $(document).ready(function() {
     set_chbx(chbx);
   });
 
+  var file_input = $('#blog_entry_blog_entry_image_attributes_attachment');
+  var label = $('label[for="blog_entry_blog_entry_image_attributes_attachment"]');
+
+  file_input.on('change', function(e) {
+    e.preventDefault();
+    label.html('<i class="glyphicon glyphicon-save"></i>' + file_input.val().split('\\').pop());
+  });
+
 });
 
 function set_chbx(chbx) {

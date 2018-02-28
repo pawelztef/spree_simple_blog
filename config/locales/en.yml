@@ -46,6 +46,8 @@ en:
     new_blog_entry: "New Blog Entry"
     no_blog_entries: "No blog entries found."
     blog_entry_featured_image: Featured image
+    upload_image: "Choose Image" 
+    no_image: "No Image"
     posted_on: Posted on
     posted_in: "Categories" 
     tagged: "Tags"

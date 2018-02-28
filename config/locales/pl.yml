@@ -43,6 +43,8 @@ pl:
     new_blog_entry: "Nowy wpis"
     no_blog_entries: "Brak wpisów"
     blog_entry_featured_image: "Zdjęcie wyróżniające" 
+    upload_image: "Wybierz plik" 
+    no_image: "Brak zdjęcia"
     posted_on: "Opublikowano"
     posted_in: "Kategorie" 
     tagged: "Tagi"

@@ -100,4 +100,15 @@ span.formError {
 .glyphicon-check, .glyphicon-unchecked {
   font-size: 1.1em;
 }
-
+input#blog_entry_blog_entry_image_attributes_attachment {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.blog_entry_image_thumbnail {
+  padding-top: 2px;
+  color: #555555;
+}
