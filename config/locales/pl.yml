@@ -12,6 +12,8 @@ pl:
         permalink: Permalink
         published_at: 'Opublikowano'
         visible: 'Widoczny'
+        project: 'Projekt'
+        slider: 'Slider'
         author_id: 'Autor'
         tag_list: 'Tagi'
         category_list: 'Kategorie'
@@ -27,6 +29,8 @@ pl:
     permalink: Permalink
     published_at: 'Opublikowano'
     visible: 'Widoczny'
+    project: 'Projekt'
+    slider: 'Slider'
     author_id: 'Autor'
     tag_list: 'Tagi'
     category_list: 'Kategorie'

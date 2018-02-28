@@ -14,7 +14,14 @@
         <%= form.error_message_on :visible %>
       <% end %>
     </div> 
-    <div class="col-md-4">
+   <div class="col-md-1">
+      <%= form.field_container :project do %>
+        <%= form.label :project,  Spree.t(:project)  %><br />
+        <%= form.check_box :project %>
+        <%= form.error_message_on :project %>
+      <% end %>
+   </div>
+   <div class="col-md-3">
       <%= form.field_container :published_at do %>
         <%= form.label :published_at, Spree.t(:published_at) %><br />
         <%= form.error_message_on :published_at %>

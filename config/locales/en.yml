@@ -15,6 +15,8 @@ en:
         permalink: Permalink
         published_at: Published at
         visible: Visible
+        project: Project
+        slider: Slider
         author_id: Author
         tag_list: Tags
         category_list: Categories
@@ -30,6 +32,8 @@ en:
     permalink: Permalink
     published_at: Published at
     visible: Visible
+    project: Project
+    slider: Slider
     author_id: Author
     tag_list: Tags
     category_list: Categories
