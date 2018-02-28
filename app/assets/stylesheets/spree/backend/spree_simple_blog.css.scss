@@ -16,7 +16,7 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
 form#new_blog_entry {
   padding: 0 16px;
 }
-div#blog_entry_visible_field {
+div#blog_entry_visible_field, div#blog_entry_project_field {
   text-align: center;
 }
 div#blog_entry_body_field {
@@ -43,7 +43,7 @@ select#mobility_locale {
     padding: .3em .8em .5em;
   }
 }
-input#blog_entry_visible {
+input#blog_entry_visible, input#blog_entry_project {
   margin-top: 12px;
   transform: scale(1.2) !important
 }
