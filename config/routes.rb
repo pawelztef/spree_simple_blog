@@ -18,6 +18,6 @@ Spree::Core::Engine.routes.draw do
     get '/' => 'blog_entries#index'
   end
   get '/about' => 'blog_entries#about'
-  get '/project/:slug' => 'blog_entries#project'
+  get '/project/:slug' => 'blog_entries#project', :as => :project
 end
 
