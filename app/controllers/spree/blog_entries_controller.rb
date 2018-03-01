@@ -13,7 +13,7 @@ class Spree::BlogEntriesController < Spree::StoreController
   end
 
   def index
-    @blog_entries = Spree::BlogEntry.visible.page(@pagination_page).per(@pagination_per_page)
+    @blog_entries = Spree::BlogEntry.visible.where(project: false).page(@pagination_page).per(@pagination_per_page)
   end
 
   def show
