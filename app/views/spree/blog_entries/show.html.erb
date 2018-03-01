@@ -21,5 +21,9 @@
     </div>
     <%== @blog_entry.body %>
   </div>
-  <%= render :partial => 'spree/blog_entries/comments', :locals => {:blog_entry => @blog_entry}  %>
 </article>
+<div class="row">
+  <div class="post-img-wrap col-md-8 col-md-offset-2">
+    <%= render :partial => 'spree/blog_entries/comments', :locals => {:blog_entry => @blog_entry}  %>
+  </div>
+</div>
