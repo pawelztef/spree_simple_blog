@@ -4,6 +4,10 @@ class Spree::BlogEntriesController < Spree::StoreController
   before_action :init_pagination, :only => [:index, :tag, :archive, :author, :category]
   rescue_from ActiveRecord::RecordNotFound, :with => :render_404
 
+  def projects
+    @projects = Spree::BlogEntry.visible.project.page(@pagination_page).per(@pagination_per_page)
+  end
+
   def index
     @blog_entries = Spree::BlogEntry.visible.page(@pagination_page).per(@pagination_per_page)
   end
