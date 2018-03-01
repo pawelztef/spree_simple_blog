@@ -5,7 +5,7 @@ class Spree::BlogEntriesController < Spree::StoreController
   rescue_from ActiveRecord::RecordNotFound, :with => :render_404
 
   def about
-    @projects = Spree::BlogEntry.visible.page(@pagination_page).per(@pagination_per_page)
+    @projects = Spree::BlogEntry.visible.project.page(@pagination_page).per(@pagination_per_page)
   end
 
   def project

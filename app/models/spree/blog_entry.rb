@@ -13,6 +13,7 @@ class Spree::BlogEntry < ApplicationRecord
 
   default_scope { order("published_at DESC") }
   scope :visible, -> { where :visible => true }
+  scope :project, -> { where :project => true }
   scope :recent, lambda{|max=5| visible.limit(max) }
 
   if Spree.user_class
