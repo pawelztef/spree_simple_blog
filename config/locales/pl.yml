@@ -12,6 +12,7 @@ pl:
         permalink: Permalink
         published_at: 'Opublikowano'
         visible: 'Widoczny'
+        locale: 'Język'
         project: 'Projekt'
         slider: 'Slider'
         author_id: 'Autor'
@@ -29,6 +30,8 @@ pl:
     permalink: Permalink
     published_at: 'Opublikowano'
     visible: 'Widoczny'
+    locale: 'Język'
+    editing: 'Edycja'
     project: 'Projekt'
     slider: 'Slider'
     author_id: 'Autor'
@@ -45,6 +48,7 @@ pl:
     blog_entry_featured_image: "Zdjęcie wyróżniające" 
     upload_image: "Wybierz plik" 
     no_image: "Brak zdjęcia"
+    back_to_blog_list: "Lista wpisów"
     posted_on: "Opublikowano"
     posted_in: "Kategorie" 
     tagged: "Tagi"
@@ -64,6 +68,9 @@ pl:
       tags: "Chmura tagów"
       recent_entries: "Ostatnie wpisy"
       archive: "Archiwum"
+    actions:
+      update: "Zapisz" 
+      cancel: "Zrezygnuj"
   time:
     formats:
       blog_date: "%e %b %Y"

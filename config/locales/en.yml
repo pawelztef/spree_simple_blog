@@ -15,6 +15,7 @@ en:
         permalink: Permalink
         published_at: Published at
         visible: Visible
+        locale: 'Language'
         project: Project
         slider: Slider
         author_id: Author
@@ -32,6 +33,8 @@ en:
     permalink: Permalink
     published_at: Published at
     visible: Visible
+    locale: 'Language'
+    editing: 'Edycja'
     project: Project
     slider: Slider
     author_id: Author
@@ -44,6 +47,7 @@ en:
     blog: "Blog"
     blog_entries: "Blog Entries"
     new_blog_entry: "New Blog Entry"
+    back_to_blog_list: "Back To Blog List"
     no_blog_entries: "No blog entries found."
     blog_entry_featured_image: Featured image
     upload_image: "Choose Image" 
@@ -67,6 +71,8 @@ en:
       tags: Tag cloud
       recent_entries: Recent entries
       archive: Archive
+    actions:
+      update: Update
   time:
     formats:
       blog_date: "%e %b %Y"

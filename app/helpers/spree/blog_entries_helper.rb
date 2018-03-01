@@ -50,8 +50,15 @@ module Spree
       begin
         loc = SpreeI18n::Config.available_locales  
       rescue  
-        loc = ['en']
+        loc = ['pl']
       end 
+    end
+    def show_project  entry 
+      if entry.project
+       content_tag(:i, '', :class => 'glyphicon glyphicon-check')
+      else
+       content_tag(:i, '', :class => 'glyphicon glyphicon-unchecked')
+      end
     end
     def show_visibility entry 
       if entry.visible

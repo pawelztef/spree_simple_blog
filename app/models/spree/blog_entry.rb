@@ -2,9 +2,11 @@ require 'acts-as-taggable-on'
 
 class Spree::BlogEntry < ApplicationRecord
   extend Mobility
-  translates :title, type: :string, fallbacks: { en: :es, es: :en },  fallthrough_accessors: true
-  translates :body, type: :string, fallbacks: { en: :es, es: :en },  fallthrough_accessors: true
-  translates :summary, type: :string, fallbacks: { en: :es, es: :en },  fallthrough_accessors: true
+  translates :title, type: :string, fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
+  translates :body, type: :string,  fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
+  translates :summary, type: :string, fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
+  # translates :tags, type: :string, fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
+  # translates :categories, type: :string, fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
   acts_as_taggable_on :tags, :categories
   before_save :create_permalink
   before_save :set_published_at
@@ -27,7 +29,11 @@ class Spree::BlogEntry < ApplicationRecord
 
   def entry_summary(chars=200)
     if summary.blank?
-      "#{body[0...chars]}..."
+      unless body.nil?
+      "#{body[0...chars]}..." 
+      else
+        "No translation"
+      end
     else
       summary
     end
