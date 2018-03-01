@@ -17,5 +17,7 @@ Spree::Core::Engine.routes.draw do
     get '/feed' => 'blog_entries#feed', :as => :feed, :format => :rss
     get '/' => 'blog_entries#index'
   end
+  get '/about' => 'blog_entries#about'
+  get '/project/:slug' => 'blog_entries#project'
 end
 
