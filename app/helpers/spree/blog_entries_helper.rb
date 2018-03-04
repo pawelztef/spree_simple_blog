@@ -67,5 +67,13 @@ module Spree
        content_tag(:i, '', :class => 'glyphicon glyphicon-unchecked')
       end
     end
+
+    def set_header_title
+       if current_page?('/en/blog') || current_page?('/blog')
+         content_tag :h1, t(:blog)
+       elsif current_page?('/en/about') || current_page?('/about')
+         content_tag :h1, t(:about)
+       end
+    end
   end
 end
