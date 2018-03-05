@@ -3,8 +3,6 @@ class Spree::BlogEntry < ApplicationRecord
   translates :title, type: :string, fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
   translates :body, type: :string,  fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
   translates :summary, type: :string, fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
-  # translates :tags, type: :string, fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
-  # translates :categories, type: :string, fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
   before_save :create_permalink
   before_save :set_published_at
   validates_presence_of :title

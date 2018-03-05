@@ -1,8 +1,8 @@
 class CreateJoinTableCategoryBlogEntry < ActiveRecord::Migration[5.1]
   def change
-    create_join_table :categories, :blog_entries do |t|
-      t.index [:category_id, :blog_entry_id]
-      t.index [:blog_entry_id, :category_id]
+    create_table :spree_blog_entries_categories do |t|
+      t.belongs_to :blog_entry
+      t.belongs_to :category
     end
   end
 end
