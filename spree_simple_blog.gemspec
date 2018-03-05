@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'spree_core', '>= 3.1.0', '< 4.0'
   s.add_dependency 'spree_extension'
-  s.add_dependency 'acts-as-taggable-on', '~> 5.0'
+  s.add_dependency 'mobility'
 
 
   s.add_development_dependency 'capybara'
