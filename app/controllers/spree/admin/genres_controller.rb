@@ -1,4 +1,4 @@
-class Spree::Admin::CategoriesController < Spree::Admin::ResourceController
+class Spree::Admin::GenresController < Spree::Admin::ResourceController
   helper 'spree/blog_entries'
   helper 'spree/admin/categories'
 

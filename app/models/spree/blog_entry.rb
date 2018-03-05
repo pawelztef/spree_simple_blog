@@ -19,7 +19,7 @@ class Spree::BlogEntry < ApplicationRecord
     belongs_to :author
   end
 
-  has_and_belongs_to_many :categories
+  has_and_belongs_to_many :genres
 
   has_one :blog_entry_image, :as => :viewable, :dependent => :destroy, :class_name => 'Spree::BlogEntryImage'
   accepts_nested_attributes_for :blog_entry_image, :reject_if => :all_blank

@@ -32,7 +32,7 @@ pl:
     visible: 'Widoczny'
     locale: 'Język'
     editing: 'Edycja'
-    editing_categories: Edycja kategori
+    editing_genres: Edycja kategori
     project: 'Projekt'
     slider: 'Slider'
     author_id: 'Autor'
