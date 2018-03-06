@@ -8,9 +8,9 @@ Deface::Override.new(:virtual_path => "spree/layouts/admin",
        <span class='glyphicon glyphicon-text-color'></span><span class='text'> Blog</span><span class='icon icon-chevron-left pull-right'></span>
      </a>
     <ul id='sidebar-blog' class='collapse nav nav-pills nav-stacked' data-hook='admin_blog_sub_tabs'>
-      <li class='sidebar-menu-item'><%= link_to 'Wpisy', admin_blog_entries_path %></li>
-      <li class='sidebar-menu-item'><%= link_to 'Kategorie', admin_genres_path %></li>
-      <li class='sidebar-menu-item'><%= link_to 'Tagi', admin_tags_path %></li>
+     <li class='sidebar-menu-item'><%= link_to Spree.t(:blog_entries), admin_blog_entries_path %></li>
+     <li class='sidebar-menu-item'><%= link_to Spree.t(:genres), admin_genres_path %></li>
+     <li class='sidebar-menu-item'><%= link_to Spree.t(:tags), admin_tags_path %></li>
     </ul>
   </li>
 </ul>

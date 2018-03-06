@@ -169,3 +169,12 @@ ul.chosen-choices {
 .chosen-container .chosen-results {
   border: 1px solid #b0d68b !important;
 }
+label.btn.btn-default.pull-right {
+  font-size: 13px;
+  padding: 9px 16px;
+  overflow: hidden;
+}
+.blog_entry_image_thumbnail span.lead {
+  font-size: 18px;
+  line-height: 1.7;
+}
