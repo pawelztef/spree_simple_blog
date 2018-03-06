@@ -27,13 +27,10 @@ $(document).ready(function() {
 });
 
 function set_chbx(chbx) {
-  var categories = $('#blog_entry_category_list_field');
-  var tags = $('#blog_entry_tag_list_field');
+  var categories = $('.blog-entry-categories');
   if(chbx.is(':checked')){
-    tags.hide();
     categories.hide();
   } else {
-    tags.show();
     categories.show();
   }
 }
