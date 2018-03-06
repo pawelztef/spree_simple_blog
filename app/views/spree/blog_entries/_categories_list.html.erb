@@ -1,4 +1,4 @@
-<% categories = Spree::BlogEntry.visible.tag_counts_on(:categories).sort_by(&:count) %>
+<%# <% categories = Spree::BlogEntry.visible.tag_counts_on(:categories).sort_by(&:count) %1> %>
 <% if categories.present? %>
   <div class="blog_categories_list_wrapper">
     <h6><%= Spree.t('blog.categories') %></h6>

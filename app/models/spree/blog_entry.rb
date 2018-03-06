@@ -53,7 +53,7 @@ class Spree::BlogEntry < ApplicationRecord
   end
 
   def self.by_category(category_name)
-    tagged_with(category_name, :on => :categories)
+    Spree::Genre.where(slug: category_name).blog_entries
   end
 
   def self.by_author(author)
