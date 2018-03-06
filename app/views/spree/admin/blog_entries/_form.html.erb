@@ -57,25 +57,23 @@
   </div>
   <div class="row">
     <div class="col-md-6">
-      <%= form.field_container :category_list do %>
-        <%= form.label :category_list, Spree.t(:category_list)  %><br />
-        <%= form.text_field :category_list, :class => 'fullwidth' %>
-      <% end %>
+      <%= form.label Spree.t(:genres) %> 
+      <%= form.select :genre_ids, Spree::Genre.all.collect{|t| [t.name, t.id]}, {prompt: 'Select Category'}, multiple: :true, class: 'chosen-select form-control'  %> 
     </div>
     <div class="col-md-6">
-      <%= form.field_container :tag_list do %>
-        <%= form.label :tag_list, Spree.t(:tag_list) %><br />
-        <%= form.text_field :tag_list, :class => 'fullwidth' %>
-      <% end %>
-    </div>
+      <%# <%= form.field_container :tag_list do %1> %>
+      <%#   <%= form.label :tag_list, Spree.t(:tag_list) %1><br /> %>
+      <%#   <%= form.text_field :tag_list, :class => 'fullwidth' %1> %>
+      <%# <% end %1> %>
+  </div>
   </div>
 
-  <% unless Rails.env.test? %>
-    <script>
-      $("#blog_entry_tag_list").select2({tags: <%= Spree::BlogEntry.tag_counts_on(:tags).map{|t| t.name }.to_json.html_safe %> });
-$("#blog_entry_category_list").select2({tags: <%= Spree::BlogEntry.tag_counts_on(:categories).map{|t| t.name }.to_json.html_safe %> });
-    </script>
-  <% end %>
+  <%# <% unless Rails.env.test? %1> %>
+    <%#   <script> %>
+<%# $("#blog_entry_tag_list").select2({tags: <%= Spree::BlogEntry.tag_counts_on(:tags).map{|t| t.name }.to_json.html_safe %1> }); %>
+  <%# $("#blog_entry_category_list").select2({tags: <%= Spree::Genre.all.map{|t| t.name }.to_json.html_safe %1> }); %>
+  <%# </script> %>
+    <%# <% end %1> %>
 
 
   <div class="row">

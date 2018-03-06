@@ -39,7 +39,9 @@ pl:
     not_created: Nie utworzono
     delete_genre: Usun kategorie
     genre: Kategoria
+    genre_list: Lista kategori
     genres: Kategorie
+    google_plus_url: Google Plus URL
     title: 'Tytuł'
     body: 'Tekst'
     summary: 'Podsumowanie'
@@ -56,7 +58,6 @@ pl:
     category_list: Kategorie
     nickname: 'Nick'
     website_url: 'URL strony WWW'
-    google_plus_url: Google Plus URL
     bio_info: 'Info biograficzne'
     blog: "Blog"
     blog_entries: "Wpisy"

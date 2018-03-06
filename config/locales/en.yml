@@ -55,8 +55,10 @@ en:
     create_genre: Save Category
     delete_genre: Delete
     editing: 
-    google_plus_url: Google Plus URL
     genre: Category
+    genre_list: Categories list
+    genres: Categories
+    google_plus_url: Google Plus URL
     locale: 'Language'
     nickname: Nickname
     not_created:

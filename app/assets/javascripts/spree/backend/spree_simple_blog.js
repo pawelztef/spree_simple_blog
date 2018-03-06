@@ -20,6 +20,10 @@ $(document).ready(function() {
     label.html('<i class="glyphicon glyphicon-save"></i>' + file_input.val().split('\\').pop());
   });
 
+  $('.chosen-select').chosen({
+    placeholder_text_multiple: ' '
+  });
+
 });
 
 function set_chbx(chbx) {
