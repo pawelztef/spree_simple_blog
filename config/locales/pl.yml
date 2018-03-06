@@ -1,6 +1,10 @@
 pl:
   activerecord:
     models:
+      spree/genre:
+        one: Kategorie
+        other: Kategorie
+        few: Kategorie
       spree/blog_entry:
         one: 'Wpis' 
         other: 'Wpisy' 
@@ -24,6 +28,18 @@ pl:
         google_plus_url: Google Plus URL
         bio_info: 'Info biograficzne'
   spree:
+    add_genre: Dodaj kategorię
+    admin:
+      tab:
+        blog_entries: Wpisy
+    author_id: Autor
+    version: Wersja
+    create_genre: Utwórz kategorię
+    no_genres: Brak kategori
+    not_created: Nie utworzono
+    delete_genre: Usun kategorie
+    genre: Kategoria
+    genres: Kategorie
     title: 'Tytuł'
     body: 'Tekst'
     summary: 'Podsumowanie'
@@ -34,10 +50,10 @@ pl:
     editing: 'Edycja'
     editing_genres: Edycja kategori
     project: 'Projekt'
-    slider: 'Slider'
-    author_id: 'Autor'
-    tag_list: 'Tagi'
-    category_list: 'Kategorie'
+    save: Zapisz
+    slider: Slider
+    tag_list: Tagi
+    category_list: Kategorie
     nickname: 'Nick'
     website_url: 'URL strony WWW'
     google_plus_url: Google Plus URL
@@ -60,9 +76,6 @@ pl:
     blog_category: "Kategoria"
     blog_author: "Autor"
     actions: "Akcje"
-    admin:
-      tab:
-        blog_entries: "Wpisy"
     blog:
       ago: "temu" 
       categories: "Kategorie"

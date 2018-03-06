@@ -27,52 +27,60 @@ en:
         google_plus_url: Google Plus URL
         bio_info: Biographical info
   spree:
-    title: Title
-    body: Body
-    summary: Summary
-    permalink: Permalink
-    published_at: Published at
-    visible: Visible
-    locale: 'Language'
-    editing: 'Edycja'
-    project: Project
-    slider: Slider
-    author_id: Author
-    tag_list: Tags
-    category_list: Categories
-    nickname: Nickname
-    website_url: Website URL
-    google_plus_url: Google Plus URL
-    bio_info: Biographical info
-    blog: "Blog"
-    blog_entries: "Blog Entries"
-    new_blog_entry: "New Blog Entry"
-    back_to_blog_list: "Back To Blog List"
-    no_blog_entries: "No blog entries found."
-    blog_entry_featured_image: Featured image
-    upload_image: "Choose Image" 
-    no_image: "No Image"
-    posted_on: Posted on
-    posted_in: "Categories" 
-    tagged: "Tags"
-    by: by
-    blog_read_more: Read more
-    blog_archive: Archive
-    blog_tag: Tag
-    blog_category: Category
-    blog_author: Author
-    actions: "Actions"
+    add_genre: Add Category
     admin:
       tab:
         blog_entries: Blog entries
+    Actions:
+    actions:
+      update: Update
+    author_id: Author
+    by: by
     blog:
       ago: ago
       categories: Categories
       tags: Tag cloud
       recent_entries: Recent entries
       archive: Archive
-    actions:
-      update: Update
+    blog_read_more: Read more
+    blog_archive: Archive
+    blog_tag: Tag
+    blog_category: Category
+    blog_author: Author
+    body: Body
+    bio_info: Biographical info
+    blog: "Blog"
+    blog_entries: "Blog Entries"
+    category_list: Categories
+    create_genre: Save Category
+    delete_genre: Delete
+    editing: 
+    google_plus_url: Google Plus URL
+    genre: Category
+    locale: 'Language'
+    nickname: Nickname
+    not_created:
+    no_genres: No Categories
+    posted_on: Posted on
+    posted_in: "Categories" 
+    permalink: Permalink
+    published_at: Published at
+    project: Project
+    save: Save
+    slider: Slider
+    summary: Summary
+    tag_list: Tags
+    title: Title
+    website_url: Website URL
+    visible: Visible
+    version: Locale 
+    new_blog_entry: "New Blog Entry"
+    back_to_blog_list: "Back To Blog List"
+    no_blog_entries: "No blog entries found."
+    blog_entry_featured_image: Featured image
+    upload_image: "Choose Image" 
+    no_image: "No Image"
+    tagged: "Tags"
   time:
     formats:
       blog_date: "%e %b %Y"

@@ -5,7 +5,7 @@ Spree::Core::Engine.routes.draw do
         post 'mobility' 
       end
     end
-    resources :genres
+    resources :genres, path: 'blog_entry_categories'
   end
 
   scope Spree::Config['blog_alias'], as: 'blog' do

@@ -1,0 +1,22 @@
+<%= form_for [:admin, @genre] do |form| %>
+  <% set_locales_array.each do |loc|  %>
+
+    <div class="panel panel-default fields">
+      <div class="panel-heading">
+        <%= form.label :name, Spree.t(:name) %><span class="text-muted"><%= " - #{loc}" %></span>
+      </div>
+      <div class="panel-body" id="blog_entry_categories_form">
+        <%= form.text_field "name_#{loc.to_s}".to_sym, :class => 'form-control' %>
+      </div>
+    </div>
+  <% end %>
+  <div class="well flex-well">
+    <%= button_tag class: 'btn btn-primary' do %>
+      <i class="glyphicon glyphicon-refresh"></i> <%= Spree.t(:save) %>
+  <% end %>
+  <%= Spree.t(:or) %>
+  <%= button_tag class: 'btn btn-default' do %>
+    <i class="glyphicon glyphicon-remove"></i> <%= Spree.t(:cancel) %>
+<% end %>
+  </div>
+<% end %>
