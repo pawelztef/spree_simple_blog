@@ -3,6 +3,7 @@ class Spree::BlogEntry < ApplicationRecord
   translates :title, type: :string, fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
   translates :body, type: :string,  fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
   translates :summary, type: :string, fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
+  translates :permalink, type: :string, fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
   before_save :create_permalink
   before_save :set_published_at
   validates_presence_of :title
@@ -73,6 +74,10 @@ class Spree::BlogEntry < ApplicationRecord
   end
 
   private
+
+  def self.find_by_permalink!(perma)
+    self.i18n.find_by(permalink: perma)
+  end
 
   def self.years
     visible.map {|e| e.published_at.year }.uniq
