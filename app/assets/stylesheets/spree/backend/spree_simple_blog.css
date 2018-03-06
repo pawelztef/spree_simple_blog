@@ -115,6 +115,9 @@ div#blog_entry_comments {
   display: flex;
   justify-content: space-between;
 }
+.cat-row .cat-item:last-child {
+  margin-left: -5px;
+}
 .flex-well {
   display: flex;
   justify-content: space-between;

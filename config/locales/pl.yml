@@ -1,32 +1,36 @@
 pl:
   activerecord:
     models:
+      spree/tag:
+        one: Tag
+        other: Tagi
+        few: Tagów
       spree/genre:
         one: Kategorie
         other: Kategorie
         few: Kategorie
       spree/blog_entry:
-        one: 'Wpis' 
-        other: 'Wpisy' 
+        one: Wpis 
+        other: Wpisy 
     attributes:
       spree/blog_entry:
-        title: 'Tytuł'
-        body: 'Tekst'
-        summary: 'Podsumowanie'
+        title: Tytuł
+        body: Tekst
+        summary: Podsumowanie
         permalink: Permalink
-        published_at: 'Opublikowano'
-        visible: 'Widoczny'
-        locale: 'Język'
-        project: 'Projekt'
-        slider: 'Slider'
-        author_id: 'Autor'
-        tag_list: 'Tagi'
-        category_list: 'Kategorie'
+        published_at: Opublikowano
+        visible: Widoczny
+        locale: Język
+        project: Projekt
+        slider: Slider
+        author_id: Autor
+        tag_list: Tagi
+        category_list: Kategorie
       spree/user:
-        nickname: 'Nick'
-        website_url: 'URL strony WWW'
+        nickname: Nick
+        website_url: URL strony WWW
         google_plus_url: Google Plus URL
-        bio_info: 'Info biograficzne'
+        bio_info: Info biograficzne
   spree:
     add_genre: Dodaj kategorię
     admin:
@@ -42,50 +46,53 @@ pl:
     genre_list: Lista kategori
     genres: Kategorie
     google_plus_url: Google Plus URL
-    title: 'Tytuł'
-    body: 'Tekst'
-    summary: 'Podsumowanie'
+    body: Tekst
+    summary: Posdumowanie
     permalink: Permalink
-    published_at: 'Opublikowano'
-    visible: 'Widoczny'
-    locale: 'Język'
-    editing: 'Edycja'
+    published_at: Opublikowano
+    visible: Widoczny
+    locale: Język
+    editing: Edycja
+    editing_tags: Edycja Tagów
     editing_genres: Edycja kategori
-    project: 'Projekt'
+    project: Projekt
     save: Zapisz
     slider: Slider
     tag_list: Tagi
+    tagged: Tagi
+    tags: Tagi
+    title: Tytuł
     category_list: Kategorie
-    nickname: 'Nick'
-    website_url: 'URL strony WWW'
-    bio_info: 'Info biograficzne'
-    blog: "Blog"
-    blog_entries: "Wpisy"
-    new_blog_entry: "Nowy wpis"
-    no_blog_entries: "Brak wpisów"
-    blog_entry_featured_image: "Zdjęcie wyróżniające" 
-    upload_image: "Wybierz plik" 
-    no_image: "Brak zdjęcia"
-    back_to_blog_list: "Lista wpisów"
-    posted_on: "Opublikowano"
-    posted_in: "Kategorie" 
-    tagged: "Tagi"
-    by: "przez"
-    blog_read_more: "Czytaj więcej"
-    blog_archive: "Archiwum"
+    nickname: Nick
+    website_url: URL strony WWW
+    bio_info: Info biograficzne
+    blog: Blog
+    blog_entries: Wpisy
+    new_blog_entry: Nowy wpis
+    no_blog_entries: Brak wpisów
+    no_image: Brak zdjęcia
+    no_tag: Brak tagów
+    blog_entry_featured_image: Zdjęcie wyróżniające 
+    upload_image: Wybierz plik 
+    back_to_blog_list: Lista wpisów
+    posted_on: Opublikowano
+    posted_in: Kategorie 
+    by: przez
+    blog_read_more: Czytaj więcej
+    blog_archive: Archiwum
     blog_tag: Tag
-    blog_category: "Kategoria"
-    blog_author: "Autor"
-    actions: "Akcje"
+    blog_category: Kategoria
+    blog_author: Autor
+    actions: Akcje
     blog:
-      ago: "temu" 
-      categories: "Kategorie"
-      tags: "Chmura tagów"
-      recent_entries: "Ostatnie wpisy"
-      archive: "Archiwum"
+      ago: temu 
+      categories: Kategorie
+      tags: Chmura tagów
+      recent_entries: Ostatnie wpisy
+      archive: Archiwum
     actions:
-      update: "Zapisz" 
-      cancel: "Zrezygnuj"
+      update: Zapisz 
+      cancel: Zrezygnuj
   time:
     formats:
       blog_date: "%e %b %Y"

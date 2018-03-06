@@ -1,9 +1,10 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
   activerecord:
     models:
+      spree/tag:
+        one: Tag
+        other: Tags
+        few: Tags
       spree/blog_entry:
         one: Blog Entry
         other: Blog Entries
@@ -15,7 +16,7 @@ en:
         permalink: Permalink
         published_at: Published at
         visible: Visible
-        locale: 'Language'
+        locale: Language
         project: Project
         slider: Slider
         author_id: Author
@@ -49,40 +50,45 @@ en:
     blog_author: Author
     body: Body
     bio_info: Biographical info
-    blog: "Blog"
-    blog_entries: "Blog Entries"
+    blog: Blog
+    blog_entries: Blog Entries
     category_list: Categories
     create_genre: Save Category
     delete_genre: Delete
     editing: 
+    editing_genres: 
+    editing_tags:
     genre: Category
     genre_list: Categories list
     genres: Categories
     google_plus_url: Google Plus URL
-    locale: 'Language'
+    locale: Language
     nickname: Nickname
     not_created:
     no_genres: No Categories
+    no_tag: No Tags
     posted_on: Posted on
-    posted_in: "Categories" 
+    posted_in: Categories 
     permalink: Permalink
     published_at: Published at
     project: Project
     save: Save
     slider: Slider
     summary: Summary
+    tag: Tag
+    tags: Tags
+    tagged: Tagged
     tag_list: Tags
     title: Title
     website_url: Website URL
     visible: Visible
     version: Locale 
-    new_blog_entry: "New Blog Entry"
-    back_to_blog_list: "Back To Blog List"
-    no_blog_entries: "No blog entries found."
+    new_blog_entry: New Blog Entry
+    back_to_blog_list: Back To Blog List
+    no_blog_entries: No blog entries found
     blog_entry_featured_image: Featured image
-    upload_image: "Choose Image" 
-    no_image: "No Image"
-    tagged: "Tags"
+    upload_image: Choose Image 
+    no_image: No Image
   time:
     formats:
       blog_date: "%e %b %Y"
