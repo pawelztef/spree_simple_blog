@@ -30,11 +30,11 @@ module Spree
     end
 
     def blog_entry_tag_list_html blog_entry
-      blog_entry.tags.map {|tag| link_to tag.name, blog_tag_path(tag.name) }.join(", ").html_safe
+      blog_entry.tags.map {|tag| link_to tag.name, blog_tag_path(tag.slug) }.join(", ").html_safe
     end
 
     def blog_entry_category_list_html blog_entry
-      blog_entry.genres.map {|category| link_to category.name, blog_category_path(category.name) }.join(", ").html_safe
+      blog_entry.genres.map {|category| link_to category.name, blog_category_path(category.slug) }.join(", ").html_safe
     end
 
     def tag_cloud(tags, classes)

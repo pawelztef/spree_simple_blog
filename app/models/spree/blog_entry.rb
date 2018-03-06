@@ -49,11 +49,12 @@ class Spree::BlogEntry < ApplicationRecord
     where(:published_at => (time.send("beginning_of_#{period}")..time.send("end_of_#{period}")) )
   end
 
-  def self.by_tag(tag_name)
+  def self.by_tag(tag_slug)
+    Spree::Tag.i18n.find_by_slug(tag_slug).blog_entries
   end
 
-  def self.by_category(category_name)
-    Spree::Genre.where(slug: category_name).blog_entries
+  def self.by_category(category_slug)
+    Spree::Genre.i18n.find_by_slug(category_slug).blog_entries
   end
 
   def self.by_author(author)
