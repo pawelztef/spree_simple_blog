@@ -42,7 +42,6 @@
           <td class="align-center"><%= blog_entry.title.truncate(100) if blog_entry.title %></td>
           <td class="align-center"><%= blog_entry.summary.truncate(100).html_safe if blog_entry.summary %></td>
           <td class="actions">
-            <%= link_to_blog_in_store blog_entry, :no_text => true, target: '_blank' %>
             <%= link_to_edit blog_entry, :no_text => true %>
             <%= link_to_delete blog_entry, :no_text => true %>
           </td>

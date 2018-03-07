@@ -13,7 +13,9 @@ class Spree::BlogEntriesController < Spree::StoreController
   end
 
   def index
-    @blog_entries = Spree::BlogEntry.visible.where(project: false).page(@pagination_page).per(@pagination_per_page)
+    @categories = Spree::Genre.all
+    @blog_entries = @categories.map { |cat| cat.blog_entries.first }
+    # @blog_entries = Spree::BlogEntry.visible.where(project: false).page(@pagination_page).per(@pagination_per_page)
   end
 
   def show
