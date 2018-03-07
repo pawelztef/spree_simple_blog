@@ -1,5 +1,6 @@
 module Spree
   module BlogEntriesHelper
+
     def post_link_list
       link = Struct.new(:name,:url)
       BlogEntry.recent.collect { |post| link.new( post.title, blog_entry_permalink(post)) }
@@ -71,11 +72,12 @@ module Spree
     end
 
     def set_header_title
-       if current_page?('/en/blog') || current_page?('/blog')
+      if request.path_info.include?('blog')
          content_tag :h1, t(:blog)
-       elsif current_page?('/en/about') || current_page?('/about')
+      elsif request.path_info.include?('about')
          content_tag :h1, t(:about)
        end
     end
+
   end
 end
