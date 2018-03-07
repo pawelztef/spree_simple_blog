@@ -6,9 +6,10 @@ class Spree::Genre < ApplicationRecord
   has_and_belongs_to_many :blog_entries
   validates_presence_of :name
 
-  before_save :update_slug
+  # before_save :update_slug
+  # before_update :update_slug
 
-  def update_slug
-    self.slug = name.parameterize
-  end
+  # def update_slug
+  #   self.slug = name.parameterize
+  # end
 end

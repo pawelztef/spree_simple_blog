@@ -15,7 +15,7 @@ class Spree::Admin::GenresController < Spree::Admin::ResourceController
   
   def update
     @genre = Spree::Genre.find(params[:id])
-    @genre.attributes = params[:genre]
+    @genre.attributes = set_params
     if @genre.save
       flash[:success] = flash_message_for(@genre, :successfully_updated)
     else
@@ -26,7 +26,7 @@ class Spree::Admin::GenresController < Spree::Admin::ResourceController
 
   def create
     @genre = Spree::Genre.new
-    @genre.attributes = params[:genre]
+    @genre.attributes = set_params
     if @genre.save
       flash[:success] = flash_message_for(@genre, :successfully_created)
     else
@@ -44,7 +44,11 @@ class Spree::Admin::GenresController < Spree::Admin::ResourceController
 
   private
 
-  def genre_attributes
+  def set_params
+    genre_attributes.merge( Hash[genre_attributes.to_h.map { |k, v| [k.sub('name', 'slug'), v.parameterize] }])
+  end
+
+  def genre_attributes 
     params.require(:genre).permit!
   end
 end

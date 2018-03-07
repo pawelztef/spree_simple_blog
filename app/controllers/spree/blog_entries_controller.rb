@@ -50,9 +50,6 @@ class Spree::BlogEntriesController < Spree::StoreController
   end
 
   private
-  def find_by_permalink!(slug)
-byebug
-  end
 
   def init_pagination
     @pagination_page = params[:page].to_i > 0 ? params[:page].to_i : 1
