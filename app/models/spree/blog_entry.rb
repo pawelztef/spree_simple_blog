@@ -4,7 +4,8 @@ class Spree::BlogEntry < ApplicationRecord
   translates :body, type: :string,  fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
   translates :summary, type: :string, fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
   translates :permalink, type: :string, fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
-  before_save :create_permalink
+  # before_save :create_permalink
+  # before_update :create_permalink
   before_save :set_published_at
   validates_presence_of :title
   validates_presence_of :body
@@ -74,6 +75,14 @@ class Spree::BlogEntry < ApplicationRecord
     end
   end
 
+  def create_permalink
+    if permalink.blank?
+      self.permalink = title.parameterize
+    else
+      self.permalink = permalink.parameterize
+    end
+  end
+
   private
 
   def self.find_by_permalink!(perma)
@@ -88,9 +97,6 @@ class Spree::BlogEntry < ApplicationRecord
     visible.select {|e| e.published_at.year == year }.map {|e| e.published_at.month }.uniq
   end
 
-  def create_permalink
-    self.permalink = title.to_url if permalink.blank?
-  end
 
   def set_published_at
     self.published_at = Time.now if published_at.blank?

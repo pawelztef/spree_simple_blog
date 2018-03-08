@@ -19,11 +19,7 @@ class Spree::BlogEntriesController < Spree::StoreController
   end
 
   def show
-    if try_spree_current_user.try(:has_spree_role?, "admin")
-      @blog_entry = Spree::BlogEntry.find_by_permalink!(params[:slug])
-    else
-      @blog_entry = Spree::BlogEntry.visible.find_by_permalink!(params[:slug])
-    end
+    @blog_entry = Spree::BlogEntry.find_by_permalink!(params[:slug])
     @title = @blog_entry.title
   end
 
