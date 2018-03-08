@@ -3,9 +3,7 @@ class Spree::BlogEntry < ApplicationRecord
   translates :title, type: :string, fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
   translates :body, type: :string,  fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
   translates :summary, type: :string, fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
-  translates :permalink, type: :string, fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
-  # before_save :create_permalink
-  # before_update :create_permalink
+  translates :permalink, type: :string,  fallthrough_accessors: true
   before_save :set_published_at
   validates_presence_of :title
   validates_presence_of :body
@@ -76,10 +74,14 @@ class Spree::BlogEntry < ApplicationRecord
   end
 
   def create_permalink
-    if permalink.blank?
-      self.permalink = title.parameterize
-    else
-      self.permalink = permalink.parameterize
+    SpreeI18n::Config.available_locales.each do |loc|
+      if self.permalink(locale: loc).blank?
+        Mobility.with_locale(loc) do
+          self.permalink = title.parameterize
+        end
+      else
+        self.permalink = permalink.parameterize
+      end
     end
   end
 

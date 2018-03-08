@@ -12,8 +12,9 @@ class Spree::Admin::BlogEntriesController < Spree::Admin::ResourceController
 
   def update
     @blog_entry = Spree::BlogEntry.find(params[:id])
+    @blog_entry.assign_attributes(entry_params)
     @blog_entry.create_permalink
-    if @blog_entry.update(entry_params)
+    if @blog_entry.save
       flash[:success] = flash_message_for(@blog_entry, :successfully_updated)
       redirect_to admin_blog_entries_url
     else
@@ -59,4 +60,6 @@ class Spree::Admin::BlogEntriesController < Spree::Admin::ResourceController
       Mobility.locale = session[:mobility_locale]
     end
   end
+
+
 end
