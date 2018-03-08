@@ -4,4 +4,5 @@ class Spree::BlogEntryImage < Spree::Image
      :default_style => :large,
      :url => "/assets/blog_entry_images/:id/:style/:basename.:extension",
      :path => ":rails_root/public/assets/blog_entry_images/:id/:style/:basename.:extension"  
+  validates :attachment, attachment_presence: true
 end

@@ -25,7 +25,7 @@ class Spree::BlogEntry < ApplicationRecord
   has_and_belongs_to_many :tags
 
   has_one :blog_entry_image, :as => :viewable, :dependent => :destroy, :class_name => 'Spree::BlogEntryImage'
-  accepts_nested_attributes_for :blog_entry_image, :reject_if => :all_blank
+  accepts_nested_attributes_for :blog_entry_image
 
   def entry_summary(chars=200)
     if summary.blank?
@@ -79,7 +79,7 @@ class Spree::BlogEntry < ApplicationRecord
     SpreeI18n::Config.available_locales.each do |loc|
       if self.permalink(locale: loc).blank?
         Mobility.with_locale(loc) do
-          self.permalink = title.parameterize
+          self.permalink = title.parameterize if title
         end
       else
         self.permalink = permalink.parameterize

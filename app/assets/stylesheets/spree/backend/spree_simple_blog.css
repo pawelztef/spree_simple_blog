@@ -9,9 +9,6 @@
 .page-actions {
   list-style: none;
 }
-form#new_blog_entry {
-  padding: 0 16px;
-}
 div#blog_entry_visible_field, div#blog_entry_project_field {
   text-align: center;
 }
@@ -177,4 +174,8 @@ label.btn.btn-default.pull-right {
 .blog_entry_image_thumbnail span.lead {
   font-size: 18px;
   line-height: 1.7;
+}
+[for="blog_entry_mob_loc"] {
+  position: relative;
+  right: 20px;
 }
