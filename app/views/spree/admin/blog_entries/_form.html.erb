@@ -57,7 +57,7 @@
       </div>
       <div class="col-md-6 blog-entry-categories">
         <%= form.label Spree.t(:tags) %> 
-        <%= form.select :tag_ids, Spree::Tag.all.collect{|t| [t.name, t.id]}, {prompt: 'Select Category'}, multiple: :true, class: 'chosen-select form-control'  %> 
+        <%= form.select :blog_tag_ids, Spree::Tag.all.collect{|t| [t.name, t.id]}, {prompt: 'Select Category'}, multiple: :true, class: 'chosen-select form-control'  %> 
       </div>
     </div>
     <div class="row">
