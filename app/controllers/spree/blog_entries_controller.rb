@@ -13,10 +13,10 @@ class Spree::BlogEntriesController < Spree::StoreController
   end
 
   def index
-    @categories = Spree::Genre.all
-    # @blog_entries = @categories.map { |cat| cat.blog_entries.first }
-    # @blog_entries = Spree::BlogEntry.visible.where(project: false).page(@pagination_page).per(@pagination_per_page)
-    @blog_entries = Spree::BlogEntry.visible.all
+    @blog_entries = Spree::Genre.all.map { |g| g.blog_entries.first }
+    @blog_entries =  @blog_entries.compact.uniq { |e| e.title }
+    @categories = @blog_entries.map { |e| e.genres }
+    @categories = @categories.flatten.uniq { |c| c.name }
   end
 
   def show
@@ -46,6 +46,12 @@ class Spree::BlogEntriesController < Spree::StoreController
   def author
     @author = Spree.user_class.where(:nickname => params[:author]).first
     @blog_entries = Spree::BlogEntry.visible.by_author(@author).page(@pagination_page).per(@pagination_per_page)
+  end
+
+  def all
+    @blog_entries = Spree::BlogEntry.visible.not_project.all
+    @categories = @blog_entries.map { |e| e.genres }
+    @categories = @categories.flatten.uniq { |c| c.name }
   end
 
   private

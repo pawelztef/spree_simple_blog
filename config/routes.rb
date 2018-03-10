@@ -10,6 +10,7 @@ Spree::Core::Engine.routes.draw do
   end
 
   scope Spree::Config['blog_alias'], as: 'blog' do
+    get '/all' => 'blog_entries#all'
     get '/tag/:tag' => 'blog_entries#tag', :as => :tag
     get '/category/:category' => 'blog_entries#category', :as => :category
     get '/author/:author' => 'blog_entries#author', :as => :author

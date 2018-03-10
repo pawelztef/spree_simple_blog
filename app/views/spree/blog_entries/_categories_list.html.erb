@@ -1,7 +1,11 @@
-<% if @categories.present? %>
-    <ul class="blog_categories_list">
-      <% @categories.reverse.each do |category| %>
-        <li><%= link_to category.name, blog_category_path(category.name) %> </li>
+<div class="page-title">
+  <%= set_header_title %>
+  <% if @categories.present? %>
+    <ul class="second-nav">
+      <li><%= link_to Spree.t(:all), blog_all_path %>
+      <% @categories.each do |category| %>
+        <li><%= link_to category.name, blog_category_path(category.slug) %> </li>
       <% end %>
     </ul>
-<% end %>
+  <% end %>
+</div>

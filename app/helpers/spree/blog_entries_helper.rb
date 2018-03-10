@@ -58,25 +58,25 @@ module Spree
     end
     def show_project  entry 
       if entry.project
-       content_tag(:i, '', :class => 'glyphicon glyphicon-check')
+        content_tag(:i, '', :class => 'glyphicon glyphicon-check')
       else
-       content_tag(:i, '', :class => 'glyphicon glyphicon-unchecked')
+        content_tag(:i, '', :class => 'glyphicon glyphicon-unchecked')
       end
     end
     def show_visibility entry 
       if entry.visible
-       content_tag(:i, '', :class => 'glyphicon glyphicon-check')
+        content_tag(:i, '', :class => 'glyphicon glyphicon-check')
       else
-       content_tag(:i, '', :class => 'glyphicon glyphicon-unchecked')
+        content_tag(:i, '', :class => 'glyphicon glyphicon-unchecked')
       end
     end
 
     def set_header_title
       if request.path_info.include?('blog')
-         content_tag :h1, t(:blog)
+        content_tag :h1, t(:blog)
       elsif request.path_info.include?('about')
-         content_tag :h1, t(:about)
-       end
+        content_tag :h1, t(:about)
+      end
     end
 
   end
