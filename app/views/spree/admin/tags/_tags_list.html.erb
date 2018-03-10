@@ -3,7 +3,7 @@
     <span class="text-muted"> <%= Spree.t(:tags) %> </span>
   </div>
   <div class="panel-body" id="attr_list">
-    <% if tags.any? %>
+    <% if blog_tags.any? %>
       <ul class="cat-wrap list-group">
         <li class="cat-row list-group-item">
           <% set_locales_array.each do |loc|  %>
@@ -11,18 +11,18 @@
           <% end %>
           <span class="text-muted"><%= Spree.t(:Actions) %></span>
         </li>
-        <% tags.each do |tag| %>
+        <% blog_tags.each do |blog_tag| %>
           <li class="cat-row list-group-item">
             <% set_locales_array.each do |loc|  %>
               <div class="cat-item">
-                <%= tag.name(locale: loc) %>
+                <%= blog_tag.name(locale: loc) %>
               </div>
             <% end %>
             <div class="cat-item">
               <%= link_to "<i class='glyphicon glyphicon-pencil'></i>".html_safe,
-                edit_admin_tag_path(tag), class: 'btn btn-sm btn-primary' %>
+                edit_admin_blog_tag_path(blog_tag), class: 'btn btn-sm btn-primary' %>
               <%= link_to "<i class='glyphicon glyphicon-remove'></i>".html_safe, 
-                admin_tag_path(tag), method: :delete, class: 'btn btn-sm btn-primary'  %>
+                admin_blog_tag_path(blog_tag), method: :delete, class: 'btn btn-sm btn-primary'  %>
           </div>
           </li>
         <% end %>

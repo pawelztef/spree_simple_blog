@@ -6,7 +6,7 @@ Spree::Core::Engine.routes.draw do
       end
     end
     resources :genres, path: 'blog_entry_categories'
-    resources :tags, path: 'blog_entry_tags'
+    resources :blog_tags, path: 'blog_entry_tags'
   end
 
   scope Spree::Config['blog_alias'], as: 'blog' do

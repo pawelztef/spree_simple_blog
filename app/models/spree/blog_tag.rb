@@ -1,4 +1,4 @@
-class Spree::Tag < ApplicationRecord
+class Spree::BlogTag < ApplicationRecord
   extend Mobility
   translates :name, type: :string, fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
   translates :slug, type: :string, fallbacks: { pl: :en, en: :pl },  fallthrough_accessors: true
