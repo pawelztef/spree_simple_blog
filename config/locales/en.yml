@@ -1,7 +1,7 @@
 en:
   activerecord:
     models:
-      spree/tag:
+      spree/blog_tag:
         one: Tag
         other: Tags
         few: Tags
@@ -64,7 +64,7 @@ en:
     google_plus_url: Google Plus URL
     locale: Language
     nickname: Nickname
-    not_created:
+    not_created: "Not Created. Lenght between 2 and 25 characters"
     no_genres: No Categories
     no_tag: No Tags
     posted_on: Posted on

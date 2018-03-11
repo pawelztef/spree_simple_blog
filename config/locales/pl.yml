@@ -1,7 +1,7 @@
 pl:
   activerecord:
     models:
-      spree/tag:
+      spree/blog_tag:
         one: Tag
         other: Tagi
         few: Tagów
@@ -40,7 +40,7 @@ pl:
     version: Wersja
     create_genre: Utwórz kategorię
     no_genres: Brak kategori
-    not_created: Nie utworzono
+    not_created: "Nie utworzono. Dlugosc slowa pomiedzy 2 a 25 znakow"
     delete_genre: Usun kategorie
     genre: Kategoria
     genre_list: Lista kategori

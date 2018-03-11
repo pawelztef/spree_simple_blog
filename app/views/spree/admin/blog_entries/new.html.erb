@@ -7,6 +7,9 @@
 
 
 <%= render "spree/shared/error_messages", :target => @blog_entry %>
+
+
+
 <%= form_for [:admin, @blog_entry] do |f| %>
   <%= render :partial => f %>
   <%= render :partial => 'spree/admin/shared/new_resource_links' %>

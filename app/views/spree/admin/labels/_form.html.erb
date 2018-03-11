@@ -1,4 +1,4 @@
-<%= form_for [:admin, @tag] do |form| %>
+<%= form_for [:admin, @label] do |form| %>
   <% set_locales_array.each do |loc|  %>
 
     <div class="panel panel-default fields">
@@ -10,13 +10,11 @@
       </div>
     </div>
   <% end %>
-  <div class="flex-well">
-    <%= button_tag class: 'btn btn-primary' do %>
-      <i class="glyphicon glyphicon-refresh"></i> <%= Spree.t(:save) %>
-  <% end %>
-  <%= Spree.t(:or) %>
-  <%= button_tag class: 'btn btn-default' do %>
-    <i class="glyphicon glyphicon-remove"></i> <%= Spree.t(:cancel) %>
+  <%= button_tag class: 'btn btn-primary' do %>
+    <i class="glyphicon glyphicon-refresh"></i> <%= Spree.t(:save) %>
 <% end %>
-  </div>
+<%= Spree.t(:or) %>
+<%= button_tag class: 'btn btn-default' do %>
+  <i class="glyphicon glyphicon-remove"></i> <%= Spree.t(:cancel) %>
+<% end %>
 <% end %>

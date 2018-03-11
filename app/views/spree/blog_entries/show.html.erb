@@ -14,7 +14,7 @@
         <% end %>
       </div>
       <div class="taxonomy-nav">
-        <% unless @blog_entry.blog_tags.empty? %>
+        <% unless @blog_entry.labels.empty? %>
           <span><%= Spree.t(:tagged) %></span> <%= blog_entry_tag_list_html @blog_entry %>.
         <% end %>
       </div>

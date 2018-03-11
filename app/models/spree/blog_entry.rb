@@ -23,9 +23,10 @@ class Spree::BlogEntry < ApplicationRecord
   end
 
   has_and_belongs_to_many :genres
-  has_and_belongs_to_many :blog_tags
+  has_and_belongs_to_many :labels
 
   has_one :blog_entry_image, :as => :viewable, :dependent => :destroy, :class_name => 'Spree::BlogEntryImage'
+
   accepts_nested_attributes_for :blog_entry_image
 
   def entry_summary(chars=200)
@@ -51,8 +52,8 @@ class Spree::BlogEntry < ApplicationRecord
     where(:published_at => (time.send("beginning_of_#{period}")..time.send("end_of_#{period}")) )
   end
 
-  def self.by_tag(tag_slug)
-    Spree::Tag.i18n.find_by_slug(tag_slug).blog_entries
+  def self.by_label(label_slug)
+    Spree::Label.i18n.find_by_slug(label_slug).blog_entries
   end
 
   def self.by_category(category_slug)

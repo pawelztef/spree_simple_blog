@@ -1,6 +1,5 @@
 class Spree::Admin::GenresController < Spree::Admin::ResourceController
   helper 'spree/blog_entries'
-  helper 'spree/admin/taggable'
   before_action :genre_attributes, only: [:create, :update]
 
   def index

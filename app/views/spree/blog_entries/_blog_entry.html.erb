@@ -1,16 +1,16 @@
 <article class="col-md-4">
   <div class="post-img-wrap">
-    <%# <%= link_to blog_entry_permalink(blog_entry), class: "post-img" do %1> %>
+    <%= link_to blog_entry_permalink(blog_entry), class: "post-img" do %>
       <%= image_tag  blog_entry.blog_entry_image.attachment.url(:large), 
         class: "attachment-post-thumbnail size-post-thumbnail wp-post-image" %>
-    <%# <% end %1> %>
+    <% end %>
   </div>
   <div class="post-content-wrap">
     <div class="post-content">
       <%= render :partial => 'spree/blog_entries/blog_entry_details', :locals => {:blog_entry => blog_entry} %>
       <h2 class="post-title"> <%= link_to blog_entry.title, blog_entry_permalink(blog_entry) %></h2>
-      <%# <p class="post-excerpt"> <%== blog_entry.entry_summary %1> </p> %>
-      <%# <div class="post-btn"> <b> <%= link_to Spree.t(:blog_read_more), blog_entry_permalink(blog_entry) %1> </b> </div> %>
+      <p class="post-excerpt"> <%== blog_entry.entry_summary %> </p>
+      <div class="post-btn"> <b> <%= link_to Spree.t(:blog_read_more), blog_entry_permalink(blog_entry) %> </b> </div>
     </div>
   </div>
 </article>

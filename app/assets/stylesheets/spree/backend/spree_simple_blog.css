@@ -115,11 +115,6 @@ div#blog_entry_comments {
 .cat-row .cat-item:last-child {
   margin-left: -5px;
 }
-.flex-well {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; 
-}
 
 .chosen-container-multi .chosen-choices {
   position: relative;
@@ -178,4 +173,13 @@ label.btn.btn-default.pull-right {
 [for="blog_entry_mob_loc"] {
   position: relative;
   right: 20px;
+}
+.cat-item {
+  width: 200px;
+}
+.cat-item:nth-child(3) {
+ text-align: right;
+}
+.cat-item:nth-child(2) {
+  text-align: center;
 }

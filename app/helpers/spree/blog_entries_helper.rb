@@ -31,7 +31,7 @@ module Spree
     end
 
     def blog_entry_tag_list_html blog_entry
-      blog_entry.blog_tags.map {|tag| link_to tag.name, blog_tag_path(tag.slug(locale: I18n.locale)) }.join(", ").html_safe
+      blog_entry.labels.map {|label| link_to label.name, blog_tag_path(label.slug(locale: I18n.locale)) }.join(", ").html_safe
     end
 
     def blog_entry_category_list_html blog_entry

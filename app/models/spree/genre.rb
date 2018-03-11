@@ -5,5 +5,6 @@ class Spree::Genre < ApplicationRecord
 
   has_and_belongs_to_many :blog_entries
   validates_presence_of :name
+  validates :name, length: { minimum: 2, maximum: 26 }
 
 end

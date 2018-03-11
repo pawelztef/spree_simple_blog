@@ -1,7 +1,7 @@
 <% content_for :page_title do %>
   <%= Spree.t(:editing_genres) %>
 <% end %>
-
+<%= render "spree/shared/error_messages", :target => @genre %>
 <div class="row">
   <div class="col-md-8">
     <%= render 'genres_list', genres: @genres %>
