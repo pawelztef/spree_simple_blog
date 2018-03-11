@@ -17,8 +17,8 @@ class Spree::BlogEntriesController < Spree::StoreController
     @blog_entries =  @blog_entries.compact.uniq { |e| e.title }
     if @blog_entries.empty?
       @blog_entries = Spree::BlogEntry.visible.page(@pagination_page).per(3)
-    # else
-    #   @blog_entries = Kaminari.paginate_array(@blog_entries).page(@pagination_page).per(9)
+    else
+      @blog_entries = Kaminari.paginate_array(@blog_entries).page(@pagination_page).per(9)
     end
     @categories = @blog_entries.map { |e| e.genres }
     @categories = @categories.flatten.uniq { |c| c.name }
