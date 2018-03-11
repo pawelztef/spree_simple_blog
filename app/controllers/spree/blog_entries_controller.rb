@@ -54,7 +54,7 @@ class Spree::BlogEntriesController < Spree::StoreController
   end
 
   def all
-    @blog_entries = Spree::BlogEntry.visible.not_project.all
+    @blog_entries = Spree::BlogEntry.visible.not_project.all.page(@pagination_page).per(3)
     @categories = @blog_entries.map { |e| e.genres }
     @categories = @categories.flatten.uniq { |c| c.name }
   end
