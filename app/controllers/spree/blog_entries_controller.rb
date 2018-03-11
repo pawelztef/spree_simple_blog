@@ -15,6 +15,7 @@ class Spree::BlogEntriesController < Spree::StoreController
   def index
     @blog_entries = Spree::Genre.all.map { |g| g.blog_entries.first }
     @blog_entries =  @blog_entries.compact.uniq { |e| e.title }
+    @blog_entries = @blog_entries.page(@pagination_page).per(9)
     @blog_entries = Spree::BlogEntry.visible.page(@pagination_page).per(3) if @blog_entries.empty?
     @categories = @blog_entries.map { |e| e.genres }
     @categories = @categories.flatten.uniq { |c| c.name }

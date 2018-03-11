@@ -2,7 +2,7 @@
   <% @blog_entries.each do |blog_entry| %>
     <%= render :partial => 'spree/blog_entries/blog_entry', :locals => {:blog_entry => blog_entry} %>
   <% end %>
-  <%# <%= paginate @blog_entries %1> %>
+  <%= paginate @blog_entries %>
 <% else %>
   <p id="no_entries"><%= Spree.t(:no_blog_entries) %></p>
 <% end %>
