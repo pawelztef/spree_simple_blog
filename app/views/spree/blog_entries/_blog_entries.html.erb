@@ -1,6 +1,10 @@
 <% if !@blog_entries.empty? %>
-  <% @blog_entries.each do |blog_entry| %>
-    <%= render :partial => 'spree/blog_entries/blog_entry', :locals => {:blog_entry => blog_entry} %>
+  <% @blog_entries.in_groups_of(3, false) do |group| %>
+    <div class="row">
+      <% group.each do |blog_entry| %>
+        <%= render :partial => 'spree/blog_entries/blog_entry', :locals => {:blog_entry => blog_entry} %>
+      <% end %>
+    </div>
   <% end %>
   <%= paginate @blog_entries %>
 <% else %>

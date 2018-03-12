@@ -1,5 +1,7 @@
 <% content_for :second_nav do %>
-  <%= render :partial => 'spree/blog_entries/categories_list' %>
+  <div class="page-title">
+    <%= set_header_title %>
+  </div>
 <% end %>
 <div class="col-sm-12 col-md-10 col-md-offset-1">
   <%= render :partial => 'spree/blog_entries/blog_entries' %>
