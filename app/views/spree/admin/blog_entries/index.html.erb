@@ -28,8 +28,7 @@
         <th class="date"><%= Spree.t(:published_at) %></th>
         <th class="title"><%= Spree.t(:title) %></th>
         <th class=""><%= Spree.t(:summary) %></th>
-        <th class=""><%= Spree.t("Actions") %></th>
-        <%# <th class=""><%= Spree.t(:actions) %1></th> %>
+        <th class="actions"><%= Spree.t("Actions") %></th>
       </tr>
     </thead>
 
@@ -50,7 +49,11 @@
     </tbody>
   </table>
 
-  <%= paginate @blog_entries %>
+  <div class="row">
+    <div class="pg-wrp">
+      <%= paginate @blog_entries %>
+    </div>
+  </div>
 <% else %>
   <div class="alpha twelve columns no-objects-found">
     <%= Spree.t(:no_resource_found, resource: I18n.t(:other, scope: 'activerecord.models.spree/blog_entry')) %>,

@@ -2,6 +2,10 @@ class Spree::Admin::BlogEntriesController < Spree::Admin::ResourceController
   helper 'spree/blog_entries'
   before_action :set_mobility
 
+  def index
+    @blog_entries = Spree::BlogEntry.all.page(params[:page]).per(9)
+  end
+
   def new
     Spree::BlogEntry.new
   end

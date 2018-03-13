@@ -178,8 +178,18 @@ label.btn.btn-default.pull-right {
   width: 200px;
 }
 .cat-item:nth-child(3) {
- text-align: right;
+  text-align: right;
 }
 .cat-item:nth-child(2) {
   text-align: center;
+}
+.pg-wrp {
+  text-align: right;
+  padding-right: 20px;
+}
+td.actions {
+  text-align: right;
+}
+th.actions {
+  text-align: right;
 }
