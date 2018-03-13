@@ -1,11 +1,11 @@
 class Spree::BlogEntriesController < Spree::StoreController
   helper 'spree/blog_entries'
 
-  before_action :init_pagination, :only => [:index, :tag, :archive, :author, :category, :about]
+  before_action :init_pagination, :only => [:all, :index, :tag, :archive, :author, :category, :about]
   rescue_from ActiveRecord::RecordNotFound, :with => :render_404
 
   def about
-    @blog_entries = Spree::BlogEntry.visible.project.page(@pagination_page).per(@pagination_per_page)
+    @blog_entries = Spree::BlogEntry.visible.project.page(params[:page]).per(@pagination_per_page)
   end
 
   def project
@@ -16,9 +16,9 @@ class Spree::BlogEntriesController < Spree::StoreController
     @blog_entries = Spree::Genre.all.map { |g| g.blog_entries.first }
     @blog_entries =  @blog_entries.compact.uniq { |e| e.title }
     if @blog_entries.empty?
-      @blog_entries = Spree::BlogEntry.visible.page(@pagination_page).per(3)
+      @blog_entries = Spree::BlogEntry.visible.page(params[:page]).per(@pagination_per_page)
     else
-      @blog_entries = Kaminari.paginate_array(@blog_entries).page(@pagination_page).per(9)
+      @blog_entries = Kaminari.paginate_array(@blog_entries).page(params[:page]).per(@pagination_per_page)
     end
     @categories = @blog_entries.map { |e| e.genres }
     @categories = @categories.flatten.uniq { |c| c.name }
@@ -30,17 +30,17 @@ class Spree::BlogEntriesController < Spree::StoreController
   end
 
   def tag
-    @blog_entries = Spree::BlogEntry.visible.by_label(params[:tag]).page(@pagination_page).per(@pagination_per_page)
-    @tag_name = params[:tag]
+    @blog_entries = Spree::BlogEntry.visible.by_label(params[:tag]).page(params[:page]).per(@pagination_per_page)
+    @tag_name = Spree::Label.i18n.find_by_slug(params[:tag]).name
   end
 
   def category
-    @blog_entries = Spree::BlogEntry.visible.by_category(params[:category]).page(@pagination_page).per(@pagination_per_page)
-    @category_name = params[:category]
+    @blog_entries = Spree::BlogEntry.visible.by_category(params[:category]).page(params[:page]).per(@pagination_per_page)
+    @category_name = Spree::Genre.i18n.find_by_slug(params[:category]).name
   end
 
   def archive
-    @blog_entries = Spree::BlogEntry.visible.by_date(params).page(@pagination_page).per(@pagination_per_page)
+    @blog_entries = Spree::BlogEntry.visible.by_date(params).page(params[:page]).per(@pagination_per_page)
   end
 
   def feed
@@ -50,19 +50,16 @@ class Spree::BlogEntriesController < Spree::StoreController
 
   def author
     @author = Spree.user_class.where(:nickname => params[:author]).first
-    @blog_entries = Spree::BlogEntry.visible.by_author(@author).page(@pagination_page).per(@pagination_per_page)
+    @blog_entries = Spree::BlogEntry.visible.by_author(@author).page(params[:page]).per(@pagination_per_page)
   end
 
   def all
-    @blog_entries = Spree::BlogEntry.visible.not_project.all.page(@pagination_page).per(3)
-    @categories = @blog_entries.map { |e| e.genres }
-    @categories = @categories.flatten.uniq { |c| c.name }
+    @blog_entries = Spree::BlogEntry.visible.not_project.all.page(params[:page]).per(@pagination_per_page)
   end
 
   private
 
   def init_pagination
-    @pagination_page = params[:page].to_i > 0 ? params[:page].to_i : 1
-    @pagination_per_page = params[:per_page].to_i > 0 ? params[:per_page].to_i : 10
+    @pagination_per_page = 9
   end
 end
