@@ -193,3 +193,8 @@ td.actions {
 th.actions {
   text-align: right;
 }
+div#cke_blog_entry_body:focus {
+  border-color: #b0d68b;
+  box-shadow: none;
+  outline: none;
+}
