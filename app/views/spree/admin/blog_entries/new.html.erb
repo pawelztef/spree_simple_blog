@@ -1,5 +1,7 @@
 <% content_for :page_title do %>
-  <%= Spree.t(:new_blog_entry) %>
+  <div class="page-title-wrp">
+    <%= Spree.t(:new_blog_entry) %><span class="text-muted"> (<%= Mobility.locale  %>)</span>
+  </div>
 <% end %>
 <% content_for :page_actions do %>
   <%= button_link_to Spree.t(:back_to_blog_list), spree.admin_blog_entries_url, :icon => 'arrow-left' %>

@@ -19,7 +19,7 @@
           <%= form.check_box :project %>
         <% end %>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <%= form.field_container :published_at do %>
           <%= form.label :published_at, Spree.t(:published_at) %><br />
           <% if @blog_entry.published_at? %>
@@ -29,10 +29,6 @@
           <% end %>
           <%= form.text_field :published_at, :value => published_at, :class => 'datepicker form-control' %>
         <% end %>
-      </div>
-      <div class="col-md-1">
-        <%= form.label :mob_loc, Spree.t(:locale) %>
-        <h2 class="mob-bdg"><span class="label label-info"><%= Mobility.locale %></span></h2>
       </div>
     </div>
     <div class="row">

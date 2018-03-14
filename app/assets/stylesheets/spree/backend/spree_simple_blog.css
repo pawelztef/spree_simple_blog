@@ -198,3 +198,10 @@ div#cke_blog_entry_body:focus {
   box-shadow: none;
   outline: none;
 }
+.page-title-wrp span.text-muted {
+  margin-left: 10px;
+  font-size: .8em;
+  position: relative;
+  top: 1px;
+}
+
