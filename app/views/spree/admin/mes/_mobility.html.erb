@@ -1,0 +1,3 @@
+<%= form_tag mobility_admin_mes_path, id: 'mobility_form'  do  %>
+  <%= select_tag :mobility_locale, options_for_select(set_locales_array, Mobility.locale), class: "form-control mobility-select2" %>
+<% end %>

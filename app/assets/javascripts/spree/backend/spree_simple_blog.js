@@ -24,6 +24,13 @@ $(document).ready(function() {
     placeholder_text_multiple: ' '
   });
 
+  var file_input2 = $('#me_profile_image');
+  var label2 = $('label[for="me_profile_image"]');
+  file_input2.on('change', function(e) {
+    e.preventDefault();
+    label2.html('<i class="glyphicon glyphicon-save"></i>' + file_input.val().split('\\').pop());
+  });
+
 });
 
 function set_chbx(chbx) {

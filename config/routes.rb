@@ -1,5 +1,10 @@
 Spree::Core::Engine.routes.draw do
   namespace :admin do
+    resources :mes, path: 'about' do
+      collection do
+        post 'mobility'
+      end
+    end
     resources :blog_entries do
       collection do
         post 'mobility' 

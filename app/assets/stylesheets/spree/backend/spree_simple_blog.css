@@ -204,4 +204,11 @@ div#cke_blog_entry_body:focus {
   position: relative;
   top: 1px;
 }
+.img-profile {
+  margin: 10px auto;
+  min-width: 175px;
+}
 
+input#me_profile_image {
+  display: none;
+}

@@ -1,0 +1,63 @@
+<%= form_for [:admin, @me] do |form| %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-4">
+          <% if @me.profile_image.present? %>
+            <%= image_tag @me.profile_image.url(:thumb), class: 'img-profile img-responsive' %>
+          <% else %>
+            <%= image_tag 'defaultProfile', class: "img-profile img-responsive" %>
+          <% end %>
+          <br />
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-6">
+              <%= form.field_container :fullname do %>
+                <%= form.label :fullname, Spree.t(:fullname) %><span class='required'>*</span><br/>
+                <%= form.text_field :fullname, class: 'form-control' %>
+              <% end %>
+              <%= form.field_container :phone do %>
+                <%= form.label :phone, Spree.t(:phone) %><br />
+                <%= form.text_field :phone, class: 'form-control' %>
+              <% end %>
+              <%= form.field_container :profile_image do %>
+                <%= form.file_field :profile_image %>
+                <%= label_tag 'file' %>
+                <%= form.label :profile_image, class: 'form-control btn btn-default' do  %>
+                  <i class="glyphicon glyphicon-save"></i> <%= Spree.t(:choose_file) %>
+              <% end %>
+            <% end %>
+            </div>
+            <div class="col-md-6">
+              <%= form.field_container :email do %>
+                <%= form.label :email, Spree.t(:email) %><br />
+                <%= form.text_field :email, class: 'form-control' %>
+              <% end %>
+              <%= form.field_container :address_line1 do %>
+                <%= form.label :address_line1, Spree.t(:address_line1) %><br/>
+                <%= form.text_field :address_line1, class: 'form-control' %>
+              <% end %>
+              <%= form.field_container :address_line2 do %>
+                <%= form.label :address_line2, Spree.t(:address_line2) %><br/>
+                <%= form.text_field :address_line2, class: 'form-control' %>
+              <% end %>
+          </div>
+          </div>
+        </div>
+      </div> 
+      <div class="row">
+        <div class="col-md-12">
+          <%= form.field_container :bio do %>
+            <%= form.label :bio, Spree.t(:bio) %><br/>
+            <%= form.cktext_area :bio, {:cols => 60, :rows => 8, :class => 'fullwidth', :id => 'bio-body'} %>
+          <% end %>
+        </div>
+      </div>
+      <div class="">
+        <%= form.submit Spree.t(:update), class: 'btn btn-primary btn-success' %>
+        <%= link_to Spree.t(:cancel), admin_orders_path, class: 'btn btn-primary btn-default' %>
+      </div>
+    </div> 
+  </div> 
+<% end %>
