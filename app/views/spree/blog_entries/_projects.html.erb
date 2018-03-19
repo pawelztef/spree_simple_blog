@@ -1,0 +1,27 @@
+
+<% if !@blog_entries.empty? %>
+  <% @blog_entries.each do |blog_entry| %>
+    <%# <%= render :partial => 'spree/blog_entries/blog_entry', :locals => {:blog_entry => blog_entry} %1> %>
+    <div class="row">
+      <div class="col-md-7 col-sm-7  <%= cycle('', 'col-sm-push-7', name: 'first') %> <%= cycle('left', 'right', name: 'third') %>">
+        <%= image_tag blog_entry.blog_entry_image.attachment.url(:original), class: 'img-responsive' %>
+      </div>
+      <div class="col-md-7 col-sm-7  <%= cycle('', 'col-sm-pull-5', name: 'second') %> <%= cycle('right', 'left', name: 'fourth') %>">
+        <div class="content">
+          <h2><%= blog_entry.title %></h2>
+          <%== blog_entry.summary %>
+          <br />
+          <%= link_to 'Read more', blog_entry_permalink(blog_entry), class: 'post-btn'  %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="cont-center text-center">
+      <%= paginate @blog_entries, theme: 'twitter-bootstrap-3' %>
+    </div>
+  </div>
+<% else %>
+  <p id="no_entries"><%= Spree.t(:no_blog_entries) %></p>
+<% end %>
+
