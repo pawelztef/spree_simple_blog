@@ -6,7 +6,7 @@
           <% if @me.profile_image.present? %>
             <%= image_tag @me.profile_image.url(:thumb), class: 'img-profile img-responsive' %>
           <% else %>
-            <%= image_tag 'defaultProfile', class: "img-profile img-responsive" %>
+            <span>no image</span>
           <% end %>
           <br />
         </div>
