@@ -12,6 +12,7 @@ class Spree::Admin::MesController < Spree::Admin::ResourceController
       flash[:success] = flash_message_for(@me, :successfully_created)
       redirect_to admin_mes_url
     else
+      flash[:error] =  @me.errors.full_messages.map{|o| o }.join("") 
       redirect_to admin_mes_url
     end
   end
@@ -22,6 +23,7 @@ class Spree::Admin::MesController < Spree::Admin::ResourceController
       flash[:success] = flash_message_for(@me, :successfully_created)
       redirect_to admin_mes_url
     else
+      flash[:error] =  @me.errors.full_messages.map{|o| o }.join("") 
       redirect_to admin_mes_url
     end
   end

@@ -212,3 +212,9 @@ div#cke_blog_entry_body:focus {
 input#me_profile_image {
   display: none;
 }
+#profile-wrp {
+  text-align: center;
+}
+#profile-embeded {
+  width: 60%;
+}

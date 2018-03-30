@@ -1,7 +1,7 @@
 /*
 Placeholder manifest file.
 the installer will append this file to the app vendored assets here: 'vendor/assets/stylesheets/spree/frontend/all.css'
-*/
+ */
 
 .blog_author_info {
   margin-bottom: 30px;
@@ -59,4 +59,7 @@ ul#blog_entry_entries {
 }
 p.post-excerpt {
   text-align: justify;
+}
+div#personal-details p {
+  line-height: 19px;
 }
