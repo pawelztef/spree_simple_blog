@@ -9,7 +9,7 @@ class Spree::Admin::MesController < Spree::Admin::ResourceController
   def create
     @me = Spree::Me.new(me_params)
     if @me.save
-      flash[:success] = flash_message_for(@me, :successfully_created)
+      flash[:success] = Spree.t(:successfully_created_bio)
       redirect_to admin_mes_url
     else
       flash[:error] =  @me.errors.full_messages.map{|o| o }.join("") 
@@ -20,7 +20,7 @@ class Spree::Admin::MesController < Spree::Admin::ResourceController
   def update
     @me = Spree::Me.find(params[:id])
     if @me.update(me_params)
-      flash[:success] = flash_message_for(@me, :successfully_created)
+      flash[:success] = Spree.t(:successfully_created_bio)
       redirect_to admin_mes_url
     else
       flash[:error] =  @me.errors.full_messages.map{|o| o }.join("") 

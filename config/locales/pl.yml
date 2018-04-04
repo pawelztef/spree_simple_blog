@@ -12,6 +12,10 @@ pl:
       spree/blog_entry:
         one: Wpis 
         other: Wpisy 
+      spree/me:
+        one: Bio 
+        other: Bio
+        few: Bio
     attributes:
       spree/blog_entry:
         title: Tytuł
@@ -58,7 +62,9 @@ pl:
     project: Projekt
     save: Zapisz
     slider: Slider
+    successfully_created_bio: "Utworzono Bio"
     tag_list: Tagi
+    edititng_bio: Edycja bio
     tagged: Tagi
     tags: Tagi
     title: Tytuł
