@@ -28,6 +28,7 @@ en:
         google_plus_url: Google Plus URL
         bio_info: Biographical info
   spree:
+    about: About
     add_genre: Add Category
     admin:
       tab:

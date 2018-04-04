@@ -36,6 +36,7 @@ pl:
         google_plus_url: Google Plus URL
         bio_info: Info biograficzne
   spree:
+    about: O mnie
     add_genre: Dodaj kategorię
     admin:
       tab:

@@ -5,6 +5,7 @@ class Spree::BlogEntriesController < Spree::StoreController
   rescue_from ActiveRecord::RecordNotFound, :with => :render_404
 
   def about
+    @title = Spree.t(:about)
     @me = Spree::Me.first
     @blog_entries = Spree::BlogEntry.visible.project.page(params[:page]).per(@pagination_per_page)
   end
@@ -14,6 +15,7 @@ class Spree::BlogEntriesController < Spree::StoreController
   end
 
   def index
+    @title = Spree.t(:blog)
     @blog_entries = Spree::Genre.all.map { |g| g.blog_entries.first }
     @blog_entries =  @blog_entries.compact.uniq { |e| e.title }
     if @blog_entries.empty?
